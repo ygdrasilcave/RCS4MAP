@@ -1,0 +1,95 @@
+{
+	"_comment": "            Server                     |           Client                            ",
+	"_comment": "(Pub) 001/light/SET b'1'              =>  (Sub)  001/light/SET                       ",
+	"_comment": "(Sub) 001/light/SET_ACK               <=  (Pub)  001/light/SET_ACK b'ack'            ",
+	"_comment": "(Pub) 001/light/GET b'val'            =>  (Sub)  001/light/GET                       ",
+	"_comment": "(Sub) 001/light/GET_VAL               <=  (Pub)  001/light/GET_VAL b'255'            ",
+	"_comment": "(OSC) /mapcs/003/color/SET '0,128,255'=>  (OSC)  /mapcs/003/color/SET         s      ",
+	"_comment": "(OSC) /mapcs/003/color/SET_ACK   s    <=  (OSC)  /mapcs/003/color/SET_ACK   'ack'    ",
+	"_comment": "(OSC) /mapcs/003/color/GET    'get'   =>  (OSC)  /mapcs/003/color/GET         s      ",
+	"_comment": "(OSC) /mapcs/003/color/GET_VAL   s    <=  (OSC)  /mapcs/003/color/GET_VAL '0,128,255'",
+
+	"CLIENTS": {
+		"MQTT": {
+			"001": [{
+						"MODULE": "light",
+						"PAYLOAD": {
+							"SET": {"RANGE": [[0,1], [0,1]]},
+							"GET": {"VALUE": ["val"]}
+							}
+					},
+					{
+						"MODULE": "temperature",
+						"PAYLOAD": {
+							"SET": {"RANGE": [[25, 30]]},
+							"GET": {"VALUE": ["val"]}
+							}
+					}
+				],
+
+			"002": [{
+						"MODULE": "image",
+						"PAYLOAD": {
+							"SET": {"RANGE": []},
+							"GET": {"VALUE": ["img"]}
+							}
+					}
+				]
+		},
+
+		"OSC": {
+			"003": [{
+						"MODULE": "scene",
+						"PAYLOAD": {
+							"SET": {"RANGE": [[1,5]]},
+							"GET": {"VALUE": ["val"]}
+							}
+					},
+					{
+						"MODULE": "color",
+						"PAYLOAD": {
+							"SET": {"RANGE": [[0,255], [0,255], [0,255]]},
+							"GET": {"VALUE": ["val"]}
+							}
+					}
+				],
+
+			"004": [{
+						"MODULE": "message",
+						"PAYLOAD": {
+							"SET": {"RANGE": []},
+							"GET": {"VALUE": ["msg"]}
+							}
+					}
+				]
+		}
+	},
+
+	"SCHEDULED":{
+		"TIME":["mon-sat", "0-23", "*/15"],
+		"MODULE": [
+			"001/temperature/GET",
+			"/mapcs/004/message/GET"
+		]
+	},
+
+	"TELEGRAM": {
+		"TOKEN": "********************************************",
+		"MASTER_ID": 12312312
+	},
+
+	"MOSQUITTO": {
+		"IP": "192.168.1.142",
+		"PORT": 1883,
+		"USER_NAME": "MAPCS",
+		"PASSWORD": "1111"
+	},
+
+	"OSC": {
+		"SERVER_IP": "0.0.0.0",
+		"SERVER_PORT": 9000,
+		"ADDR_PATTERN": "/mapcs",
+		"CLIENTS_IP": ["192.168.1.32", "192.168.1.32"],
+		"CLIENTS_PORT": [12005, 12006]
+	}
+}
