@@ -14,8 +14,8 @@ pip install apscheduler
 pip install pyOSC
 sudo apt install python-pil
 ```
-   Adafruit Python GPIO Library - deprecated    
-   Adafruit Python SSD1306 - deprecated
+######  Adafruit Python GPIO Library - deprecated    
+######  Adafruit Python SSD1306 - deprecated
 
 
 ### 2. references
