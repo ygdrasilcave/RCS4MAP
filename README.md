@@ -2,7 +2,8 @@
 remote control system for media arts
 
 
-##1. dependencies
+
+### 1. dependencies
 ```
 sudo apt install -y mosquitto mosquitto-clients
 sudo systemctl enable mosquitto.service
@@ -17,7 +18,7 @@ sudo apt install python-pil
    Adafruit Python SSD1306 - deprecated
 
 
-##2. references
+### 2. references
    * Mosquitto: <https://mosquitto.org/>
    * telepot: <https://telepot.readthedocs.io/en/latest/>
    * paho-mqtt: <https://github.com/eclipse/paho.mqtt.python>
