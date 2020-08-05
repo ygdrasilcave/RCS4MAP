@@ -1,9 +1,15 @@
 # RCS4MAP
 remote control system for media arts
 
+### 1. structure
+<img src="_data/structure.jpg" width="80%" height="80%"></img>
+<br/><br/>
+<img src="_data/server_message_flow.jpg" width="90%" height="90%"></img>
+<br/><br/>
+<img src="_data/IMG_1849.jpg" width="90%" height="90%"></img>
 
 
-### 1. dependencies
+### 2. dependencies
 ```
 sudo apt install -y mosquitto mosquitto-clients
 sudo systemctl enable mosquitto.service
@@ -18,7 +24,7 @@ sudo apt install python-pil
 ######  Adafruit Python SSD1306 - deprecated
 
 
-### 2. references
+### 3. references
    * Mosquitto: <https://mosquitto.org/>
    * telepot: <https://telepot.readthedocs.io/en/latest/>
    * paho-mqtt: <https://github.com/eclipse/paho.mqtt.python>
