@@ -2,12 +2,9 @@
 remote control system for media arts
 
 ### 1. structure
-<img src="_data/structure.jpg" width="80%" height="80%"></img>
+<img src="_data/structure.jpg" width="50%" height="50%"></img> <img src="_data/IMG_1849.jpg" width="50%" height="50%"></img>
 <br/><br/>
 <img src="_data/server_message_flow.jpg" width="90%" height="90%"></img>
-<br/><br/>
-<img src="_data/IMG_1849.jpg" width="70%" height="70%"></img>
-
 
 ### 2. dependencies
 ```
